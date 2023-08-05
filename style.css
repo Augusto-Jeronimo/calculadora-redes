@@ -1,0 +1,159 @@
+:root {
+    --dark1: #090c9b;
+    --normal1: #3066be;
+    --light1: #98d2eb;
+    --fundo: #d3d3d3;
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--light1);
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    min-height: 50px;
+    padding-top: 20px;
+    background-image: linear-gradient(to top, var(--dark1), var(--normal1));
+    color: white;
+    text-align: center;
+}
+
+main {
+    background-color: white;
+    min-width: 400px;
+    max-width: 800px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: auto;
+    padding: 40px 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+div#cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div#cont label {
+    background-color: var(--dark1);
+}
+
+label p {
+    height: 100%;
+    color: white;
+    text-align: center;
+}
+
+div#cont input {
+    margin-bottom: 10px;
+    background-color: var(--light1);
+}
+
+div#cont textarea {
+    resize: none;
+    background-color: lightgray;
+    color: black;
+}
+
+.txt {
+    text-align: center;
+    width: 60%;
+    height: 30px;
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+}
+
+.radb {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.radt {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+footer {
+    width: 100%;
+    height: 6%;
+    min-height: 30px;
+    text-align: center;
+    
+    background-color: var(--dark1);
+    color: white;
+
+    position: absolute;
+    bottom: 0;
+}
+
+footer p {
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.botoes label {
+    padding: 6px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+    transition-duration: 0,5s;
+}
+
+.botoes label:hover {
+    box-shadow: 0px 0px 5px var(--dark1);
+}
+
+#op1 {
+    background-color: var(--normal1);
+}
+
+.botoes button {
+    margin-top: 20px;
+    height: 100%;
+    width: 25%;
+    padding: 5px;
+
+    border: none;
+    outline: none;
+    border-radius: 10px;
+
+    background-color: black;
+    color: white;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition-duration: 0,5s;
+}
+
+.botoes button:hover {
+    background-color: #252525;
+}
+
+.botoes button:focus {
+    box-shadow: 0px 0px 5px black;
+}
+
+.inv {
+    display: none;
+}
