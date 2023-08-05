@@ -47,7 +47,7 @@ function crc(opc){
     var poliCrc = '1101' // Polinômio gerador
     var campoCod = document.getElementById('codigo') // Caixa de texto do código
     var codigo = campoCod.value // Código contido no campo de texto
-    var resul = document.getElementById('resul')
+    var resul = document.getElementById('resul') // Campo de resultado
     var codIni = codigo // Cópia do código
 
     // Caso seja input, adiciona os 0s necessários
@@ -134,7 +134,7 @@ function compileResult(inicio, fim, poliCrc) {
 function bitDeParidade(opc) {
     var campoCod = document.getElementById('codigo') // Caixa de texto do código
     var codigo = campoCod.value // Código contido no campo de texto
-    var resul = document.getElementById('resul')
+    var resul = document.getElementById('resul') // Campo de resultado
 
     // Caso seja input
     if (opc == 'input') {
@@ -173,5 +173,22 @@ function bitPari(codigo) {
         return '0'
     } else {
         return '1'
+    }
+}
+
+/* --v-- Código do Checksum --v-- */
+
+function checksum(opc) {
+    var campoCod = document.getElementById('codigo') // Caixa de texto do código
+    var codigo = campoCod.value // Código contido no campo de texto
+    var resul = document.getElementById('resul') // Campo de resultado
+
+    // caso seja input, calcula o checksum e concatena com o código original
+    if (opc == 'input') {
+        
+    }
+    // Caso seja output, calcula o checksum da parte dos dados e soma com o final
+    else {
+
     }
 }
