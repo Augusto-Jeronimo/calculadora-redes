@@ -9,11 +9,4 @@ function opcMark(clicado, n) {
         met[index].style.backgroundColor = 'var(--dark1)'
         clicado.style.backgroundColor = 'var(--normal1)'
     }
-
-    if (n == 0 || n == 2) {
-        campoCod.setAttribute('placeholder', 'Digite o código...')
-    } else if (n == 1) {
-        campoCod.setAttribute('placeholder', '2 bytes...')
-    }
-
 }
