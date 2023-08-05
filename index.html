@@ -7,7 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Calculadora - Redes</h1>
+    </header>
+    <main>
+        <div id="cont">
+            <label for="codigo" class="txt radt"><p>Código:</p></label>
+            <input type="text" name="codigo" id="codigo" class="txt radb">
+            <label for="resul" class="txt radt"><p>Resultado</p></label>
+            <textarea name="resul" id="resul" cols="30" rows="10" disabled class="txt radb"></textarea>
+            <section class="botoes">
+                <input type="radio" name="opc" class="inv" id="crc">
+                <input type="radio" name="opc" class="inv" id="cs">
+                <input type="radio" name="opc" class="inv" id="bp">
+
+                <label onclick="opcMark(this, 0)" class="esc" for="crc">Crc</label>
+                <label onclick="opcMark(this, 1)" class="esc" for="cs">Checksum</label>
+                <label onclick="opcMark(this, 2)" class="esc" for="bp">Bit de paridade</label>
+            </section>
+
+            <div class="botoes">
+                <button tabindex="0" onclick="enviar('input')">Input</button>
+                <button tabindex="0" onclick="enviar('output')">Output</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Augusto Jerônimo - IFRN Campus Nova Cruz</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
