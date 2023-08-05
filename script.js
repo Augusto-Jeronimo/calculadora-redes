@@ -128,3 +128,50 @@ function compileResult(inicio, fim, poliCrc) {
     return inicio + fim.substr(fimMsm, fim.length)
     /*  código ^  +   ^ final do crc gerado ^  */
 }
+
+/* --v-- Código do Bit de paridade --v-- */
+
+function bitDeParidade(opc) {
+    var campoCod = document.getElementById('codigo') // Caixa de texto do código
+    var codigo = campoCod.value // Código contido no campo de texto
+    var resul = document.getElementById('resul')
+
+    // Caso seja input
+    if (opc == 'input') {
+        //Remove os 0s do início
+        while (codigo[0] != '1') {
+            codigo = codigo.substr(1, codigo.length)
+        }
+
+        codigo += bitPari(codigo) // Adição di bit de paridade
+
+
+        resul.innerText = codigo // Insere o código no campo de resultado
+    }
+    // Caso contrário
+    else {
+        if (codigo[codigo.length-1] == bitPari(codigo) && bitPari(codigo) == '1') {
+            resul.innerText = 'Erro'
+        }else {
+            resul.innerText = 'Certo'
+        }
+    }
+    
+}
+
+function bitPari(codigo) {
+    var cont = 0
+
+    for (var i = 0; i < codigo.length; i++) {
+        
+        if (codigo[i] == '1') {
+            cont++
+        }
+    }
+
+    if (cont % 2 == 0) {
+        return '0'
+    } else {
+        return '1'
+    }
+}
