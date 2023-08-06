@@ -206,13 +206,37 @@ function checksum(opc) {
         }
         alert(`sum: ${sum} | sum_: ${sumNeg}`)
 
-        resul.value =''
         resul.value = codigo + sumNeg
 
         
     }
     // Caso seja output, calcula o checksum da parte dos dados e soma com o final
     else {
+        while (codigo.length % 3 != 0) {
+            codigo = '0' + codigo
+        }
+
+        var tam = codigo.length
+        var ter = tam/3
+
+        var pt1 = codigo.substring(0, ter)
+        var pt2 = codigo.substring(ter, ter*2)
+        var pt3 = codigo.substring(ter*2, tam)
+
+        var sum = cs(pt1, pt2)
+
+        var certo = true
+        for (let i = 0; i < sum.length; i++) {
+            if (sum[i] == pt3[i]) {
+                certo = false
+            }
+        }
+
+        if (certo) {
+            resul.value = 'certo'
+        } else {
+            resul.value = 'errado'
+        }
 
     }
 }
