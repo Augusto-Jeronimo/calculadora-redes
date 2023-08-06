@@ -193,11 +193,12 @@ function checksum(opc) {
         }
     
         var tam = codigo.length
-        var divid = tam/2
+        var met = tam/2
 
-        var pt1 = codigo.substr(0, divid)
-        var pt2 = codigo.substr(divid, tam)
+        var pt1 = codigo.substring(0, met)
+        var pt2 = codigo.substring(met, tam)
 
+        cs(pt1, pt2)
         
     }
     // Caso seja output, calcula o checksum da parte dos dados e soma com o final
@@ -206,8 +207,32 @@ function checksum(opc) {
     }
 }
 
-function func(cod1, cod2) {
+function cs(cod1, cod2) {
+    var tSum = 0
+    var tCod = cod1.length
+    var sum
 
+    do {
+        // Salva os valores como inteiro para executar a soma
+        var int1 = parseInt(cod1, 2)
+        var int2 = parseInt(cod2, 2)
+        
+        // Soma os inteiros e converte para binário
+        sum = (int1 + int2).toString(2)
+        
+        // Se a soma for um valor com mais bits que os códigos, separa em 2 valores
+        tSum = sum.length
 
-    // retornar o checksum
+        if (tSum > tCod) {
+            cod1 = sum.substring(sum.length-tCod, sum.length)
+            cod2 = sum.substring(0, sum.length-tCod)
+        } else {
+            while (tCod > tSum) {
+                sum = '0' + sum
+                tSum = sum.length
+            }
+        }
+    } while (tSum != tCod)
+
+    return sum
 }
