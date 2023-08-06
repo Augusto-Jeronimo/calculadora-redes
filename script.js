@@ -183,12 +183,31 @@ function checksum(opc) {
     var codigo = campoCod.value // Código contido no campo de texto
     var resul = document.getElementById('resul') // Campo de resultado
 
+    
+
     // caso seja input, calcula o checksum e concatena com o código original
     if (opc == 'input') {
+
+        if (codigo.length % 2 != 0) {
+            codigo = '0' + codigo
+        }
+    
+        var tam = codigo.length
+        var divid = tam/2
+
+        var pt1 = codigo.substr(0, divid)
+        var pt2 = codigo.substr(divid, tam)
+
         
     }
     // Caso seja output, calcula o checksum da parte dos dados e soma com o final
     else {
 
     }
+}
+
+function func(cod1, cod2) {
+
+
+    // retornar o checksum
 }
