@@ -198,7 +198,17 @@ function checksum(opc) {
         var pt1 = codigo.substring(0, met)
         var pt2 = codigo.substring(met, tam)
 
-        cs(pt1, pt2)
+        var sum = cs(pt1, pt2)
+        var sumNeg = ''
+
+        for (let i = 0; i < sum.length; i++) {
+            sum[i] == '1'? sumNeg += '0' : sumNeg += '1'
+        }
+        alert(`sum: ${sum} | sum_: ${sumNeg}`)
+
+        resul.value =''
+        resul.value = codigo + sumNeg
+
         
     }
     // Caso seja output, calcula o checksum da parte dos dados e soma com o final
