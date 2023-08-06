@@ -96,7 +96,7 @@ footer {
     background-color: var(--dark1);
     color: white;
 
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 
