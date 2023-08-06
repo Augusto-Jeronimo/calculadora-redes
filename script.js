@@ -204,7 +204,6 @@ function checksum(opc) {
         for (let i = 0; i < sum.length; i++) {
             sum[i] == '1'? sumNeg += '0' : sumNeg += '1'
         }
-        alert(`sum: ${sum} | sum_: ${sumNeg}`)
 
         resul.value = codigo + sumNeg
 
